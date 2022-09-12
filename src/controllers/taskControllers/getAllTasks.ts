@@ -40,7 +40,8 @@ export const getAllTasks = async (
 
     const tasks = await Task.find(option)
       .limit(limit * 1)
-      .skip(skip);
+      .skip(skip)
+      .sort({ createdAt: -1 });
     return res
       .status(200)
       .json({ status: "success", data: { ...result, count, pages, tasks } });
