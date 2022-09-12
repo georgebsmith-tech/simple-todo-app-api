@@ -39,7 +39,8 @@ const getAllTasks = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
         }
         const tasks = yield models_1.Task.find(option)
             .limit(limit * 1)
-            .skip(skip);
+            .skip(skip)
+            .sort({ createdAt: -1 });
         return res
             .status(200)
             .json({ status: "success", data: Object.assign(Object.assign({}, result), { count, pages, tasks }) });

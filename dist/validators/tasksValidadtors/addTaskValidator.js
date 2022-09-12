@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.addTaskValidator = void 0;
 const joi_1 = __importDefault(require("joi"));
 const Schema = joi_1.default.object({
-    title: joi_1.default.string().required(),
-    description: joi_1.default.string().required()
+    title: joi_1.default.string().required()
 });
 exports.addTaskValidator = Schema;
